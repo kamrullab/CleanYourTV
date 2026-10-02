@@ -29,3 +29,12 @@ Date: 2026-10-25
 ## Undo
 
 Run `sh undo.sh 192.168.1.151`. It re-enables every package listed above, restores the original animation and timeout values, keeps the screensaver enabled, removes the home screen, and returns to the TV's stock home screen.
+
+## After restart
+
+- Android boot completed normally (`sys.boot_completed=1`).
+- Active Home: protected Google TV launcher (`com.google.android.apps.tv.launcherx`).
+- Available memory: 533,960 kB, up 47,384 kB (about 46 MB) from before.
+- Disabled-package list and performance settings survived the restart.
+- Sleep timeout: 300,000 ms (5 minutes).
+- Screensaver: enabled.
