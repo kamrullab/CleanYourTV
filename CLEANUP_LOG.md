@@ -22,6 +22,11 @@ Date: 2026-10-25
   - `com.google.android.feedback` — Google feedback reporter
   - `com.google.android.play.games` — Google Play Games
   - `com.google.android.youtube.tvmusic` — YouTube Music
+  - `fusion.android.tv.demo` — factory/store demonstration app
+  - `tv.anoki.acr.anokiacroptin` — automatic content-recognition opt-in and viewing telemetry
+  - `com.expressluck.tvhelpmanual` — built-in help manual
+  - `com.android.tv.feedbackconsent` — TV feedback-consent component
+  - `com.mediatek.android.leanbacklauncher.partnercustomizer` — launcher partner promotions/customization
 - Set all three Android animation scales to `0`.
 - Set sleep timeout to 300,000 ms (5 minutes).
 - Kept the screensaver enabled.
@@ -38,3 +43,7 @@ Run `sh undo.sh 192.168.1.151`. It re-enables every package listed above, restor
 - Disabled-package list and performance settings survived the restart.
 - Sleep timeout: 300,000 ms (5 minutes).
 - Screensaver: enabled.
+
+## Home-screen limitation
+
+The clean home screen holds Android's Home role and can be opened directly, but VISION firmware assigns a higher fixed priority to `com.google.android.apps.tv.launcherx`. Pressing Home therefore returns to Google's stock launcher. Making the clean UI persistent would require disabling that protected launcher, which is intentionally not done because it can cause startup loops on some Google TVs.
