@@ -5,6 +5,8 @@
 Maintained by **Kamrul Hossain (Kamrul Lab)** at [kamrullab/CleanYourTV](https://github.com/kamrullab/CleanYourTV).
 Based on the original TV Detox project by Ansub Khan and distributed under the MIT License.
 
+The personalized launcher displays **KAMRUL HOSSAIN** in its on-screen header.
+
 <a href="https://www.skool.com/staffed-claude-code-ai-5304"><img src="https://img.shields.io/badge/Join_the_community_%E2%86%92-FFD400?style=for-the-badge" alt="Join the community" width="340"></a>
 
 ### Make an old, slow Android TV fast again.
