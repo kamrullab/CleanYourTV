@@ -178,8 +178,12 @@ public class MainActivity extends Activity {
         scroller.addView(root, new FrameLayout.LayoutParams(-1, -2));
 
         TextView brand = text(px(22), 0xFF7DE3FF, semibold);
-        brand.setText("CLEAN YOUR TV  •  KAMRUL HOSSAIN");
+        brand.setText("•  KAMRUL HOSSAIN");
         brand.setLetterSpacing(0.12f);
+        Drawable github = new GitHubIcon();
+        github.setBounds(0, 0, px(30), px(30));
+        brand.setCompoundDrawablesRelative(github, null, null, null);
+        brand.setCompoundDrawablePadding(px(13));
         GradientDrawable brandBg = new GradientDrawable();
         brandBg.setCornerRadius(px(18));
         brandBg.setColor(0x182CCBFF);
