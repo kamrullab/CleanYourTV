@@ -52,6 +52,12 @@ Claude Code or Codex does the work. You just press OK on the remote.
 
 ## Get started
 
+### One-prompt automatic mode
+
+For Codex, Claude Code, and other **local computer agents**, use the expanded [automatic AI prompt](AUTOMATION_PROMPT.md). It performs discovery, local ADB setup, package review, reversible cleanup, launcher build/install, verification, screenshots, reports, and Git updates in sequence with one upfront authorization.
+
+It does not pretend Android security prompts can be bypassed. You may still need to accept the TV's RSA/pairing dialog, approve an operating-system permission, answer whether the panel is OLED, or separately accept the boot-loop risk before disabling Google TV's protected launcher.
+
 **1. Turn on developer mode on the TV.**
 Settings → Device Preferences → About → press **Build** 7 times. Then turn on **USB debugging** in **Developer options**. [Stuck?](#help)
 Read the [notes and warnings](#notes-and-warnings) first.
