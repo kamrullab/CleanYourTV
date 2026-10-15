@@ -7,6 +7,14 @@ Based on the original TV Detox project by Ansub Khan and distributed under the M
 
 The personalized launcher displays the GitHub mark followed by **• KAMRUL HOSSAIN** in its on-screen header.
 
+## No coding needed — copy one prompt
+
+You do **not** need to know ADB, terminal commands, Android package names, Git, or Java. Install a local computer agent such as Codex or Claude Code, copy the prompt in **Step 3**, paste it into the agent, and follow only the unavoidable instructions shown on the TV.
+
+The agent automatically creates a `CleanYourTV` folder on the PC, downloads Google's official ADB tools when needed, finds/pings the TV, connects or pairs over Wi-Fi, reviews every package, measures speed and free memory, disables only reversible nonessential ad/demo/telemetry packages, applies safe performance settings, and installs [kamrullab/CleanYourTV](https://github.com/kamrullab/CleanYourTV) as the lightweight TV launcher. It also creates undo files, tests the TV after a restart, captures a screenshot, and writes the results.
+
+Some Android security steps still require a human tap: enable Developer Options/Wireless debugging, accept **Allow debugging**, enter a pairing code when requested, and approve the separate boot-loop warning if you choose to disable Google TV's protected launcher. No prompt can safely bypass those protections. Ads supplied by apps or protected firmware may remain; the workflow removes or hides only components that can be changed safely and reversibly.
+
 <a href="https://www.skool.com/staffed-claude-code-ai-5304"><img src="https://img.shields.io/badge/Join_the_community_%E2%86%92-FFD400?style=for-the-badge" alt="Join the community" width="340"></a>
 
 ### Make an old, slow Android TV fast again.
@@ -38,7 +46,7 @@ Claude Code or Codex does the work. You just press OK on the remote.
 
 <table>
 <tr>
-<td width="33%" valign="top"><b>🧹 Removes the junk</b><br>Bloatware, ads and sponsored rows, gone.</td>
+<td width="33%" valign="top"><b>🧹 Removes safe junk</b><br>Reversible bloat, telemetry and removable ad components are turned off.</td>
 <td width="33%" valign="top"><b>📺 A calm home screen</b><br>Your apps, your HDMI inputs and a clock. Nothing else.</td>
 <td width="33%" valign="top"><b>↩️ Undo anytime</b><br>Apps are turned off, never deleted.</td>
 </tr>
@@ -56,6 +64,8 @@ Claude Code or Codex does the work. You just press OK on the remote.
 
 For Codex, Claude Code, and other **local computer agents**, use the expanded [automatic AI prompt](AUTOMATION_PROMPT.md). It performs discovery, local ADB setup, package review, reversible cleanup, launcher build/install, verification, screenshots, reports, and Git updates in sequence with one upfront authorization.
 
+**Beginner workflow:** copy everything inside the code block under **3. Paste this in.** You do not need to download this repository manually or type ADB commands. The local AI agent clones [kamrullab/CleanYourTV](https://github.com/kamrullab/CleanYourTV), prepares its own PC folder, downloads official Platform Tools, connects to the TV, performs the safe cleanup, and applies CleanYourTV as the launcher automatically.
+
 It does not pretend Android security prompts can be bypassed. You may still need to accept the TV's RSA/pairing dialog, approve an operating-system permission, answer whether the panel is OLED, or separately accept the boot-loop risk before disabling Google TV's protected launcher.
 
 **1. Turn on developer mode on the TV.**
@@ -67,10 +77,12 @@ The laptop and TV must be on the same Wi-Fi.
 
 **3. Paste this in.**
 
-This detailed prompt tells a local AI agent to complete the workflow automatically, with one upfront authorization for ordinary reversible steps.
+Copy the entire block below and paste it into Codex, Claude Code, or another local computer agent. No coding knowledge is required. After the single risk confirmation, the agent should automatically download ADB, connect to the TV, reduce safe removable ads/bloat, tune performance, install this repository as the TV launcher, verify the restart, and create complete undo/report files.
 
 ```text
 Clean up, speed up, and install a lightweight personalized home screen on my Android/Google TV.
+
+I am a nontechnical user. Do not expect me to know code, ADB, package names, Git, Java, terminal commands, or folder setup. Automatically clone/download `https://github.com/kamrullab/CleanYourTV`, prepare everything it needs in a dedicated PC folder, and apply that project as my TV launcher. Give me only short instructions for taps or codes that physically require me.
 
 Before changing anything, explain this warning in plain words: this process turns off some system apps and carries risk. A few TVs have become stuck at the startup logo or kept restarting, and an AI can make mistakes. Explain that `undo.sh` plus the saved undo list restores every package and setting changed by this workflow. Ask me once to reply `I confirm, proceed` before making TV changes.
 
