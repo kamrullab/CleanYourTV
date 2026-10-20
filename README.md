@@ -94,10 +94,12 @@ The agent handles the PC folder, official ADB download, TV connection, package r
 
 On the TV, open **Settings → Device Preferences/System → About**, press **Build** seven times, then enable **USB debugging** and **Wireless/Network debugging** in Developer Options.
 
-![VISION TV Developer Options with USB debugging enabled](docs/quickstart-developer-options.png)
+| USB debugging | Wireless debugging |
+|---|---|
+| ![VISION TV Developer Options with USB debugging enabled](docs/quickstart-developer-options.png) | ![VISION TV Wireless debugging enabled](docs/quickstart-wireless-debugging.png) |
 
 > [!NOTE]
-> Look for the blue **Enable developer options** and **USB debugging** switches. Menu names vary by brand. Newer Google TVs may show **Wireless debugging** instead of a network-debugging switch.
+> Look for the blue **Enable developer options** and **USB debugging** switches. Scroll farther down to confirm **Wireless debugging — Enabled**. Some brands call it **Network debugging** or open a separate page with pairing and connection ports.
 
 ### 2. Open a local AI agent
 
