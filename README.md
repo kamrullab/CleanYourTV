@@ -21,39 +21,33 @@
 
 ## Before and after
 
-| Before: stock Google TV | After: CleanYourTV |
-|---|---|
-| ![Stock Google TV launcher](docs/before-google-tv.png) | ![CleanYourTV launcher](docs/after-cleanyourtv.png) |
+### Before: stock Google TV
+
+<img src="docs/before-google-tv.png" alt="Stock Google TV launcher" width="100%">
+
+### After: CleanYourTV
+
+<img src="docs/after-cleanyourtv.png" alt="CleanYourTV launcher" width="100%">
 
 The stock launcher contains recommendations, sponsored content, and firmware-controlled Home routing. CleanYourTV provides a lightweight app row, HDMI shortcuts, settings, clock, network status, and a personalized **GitHub icon • KAMRUL HOSSAIN** header.
 
 ## Why CleanYourTV
 
-<table>
-<tr>
-<td width="33%" align="center"><h3>⚡ Fast</h3><p>Lightweight launcher, disabled animations, measured cold/hot starts, and settings tuned for low-RAM TVs.</p></td>
-<td width="33%" align="center"><h3>🧹 Clean</h3><p>Reversible cleanup of selected bloat, demos, telemetry, and removable promotional components.</p></td>
-<td width="33%" align="center"><h3>🛡️ Safe</h3><p>Never deletes system apps. Every change is logged, checked, and recoverable with an undo script.</p></td>
-</tr>
-<tr>
-<td width="33%" align="center"><h3>🤖 Automatic</h3><p>One detailed prompt handles ADB setup, connection, package review, build, install, and verification.</p></td>
-<td width="33%" align="center"><h3>🎨 Personal</h3><p>Custom GitHub header, favorite apps, HDMI shortcuts, settings, network state, date, and clock.</p></td>
-<td width="33%" align="center"><h3>↩️ Reversible</h3><p>Original values and disabled packages are saved before changes. Run <code>undo.sh</code> to restore them.</p></td>
-</tr>
-</table>
+- **⚡ Fast** — Lightweight launcher, disabled animations, measured cold/hot starts, and settings tuned for low-RAM TVs.
+- **🧹 Clean** — Reversible cleanup of selected bloat, demos, telemetry, and removable promotional components.
+- **🛡️ Safe** — Never deletes system apps. Every change is logged, checked, and recoverable with an undo script.
+- **🤖 Automatic** — One detailed prompt handles ADB setup, connection, package review, build, install, and verification.
+- **🎨 Personal** — Custom GitHub header, favorite apps, HDMI shortcuts, settings, network state, date, and clock.
+- **↩️ Reversible** — Original values and disabled packages are saved before changes. Run `undo.sh` to restore them.
 
 ## Automatic workflow
 
 <div align="center">
 
 ![Connect](https://img.shields.io/badge/1-CONNECT-00B8D9?style=for-the-badge&logo=android&logoColor=white)
-➡️
 ![Inspect](https://img.shields.io/badge/2-INSPECT-7C4DFF?style=for-the-badge&logo=searchengin&logoColor=white)
-➡️
 ![Clean](https://img.shields.io/badge/3-CLEAN-FF6D00?style=for-the-badge&logo=sparkles&logoColor=white)
-➡️
 ![Install](https://img.shields.io/badge/4-INSTALL-00C853?style=for-the-badge&logo=android&logoColor=white)
-➡️
 ![Verify](https://img.shields.io/badge/5-VERIFY-2962FF?style=for-the-badge&logo=checkmarx&logoColor=white)
 
 </div>
@@ -77,26 +71,26 @@ The agent handles the PC folder, official ADB download, TV connection, package r
 <div align="center">
 
 ![Step 1](https://img.shields.io/badge/1-ENABLE_DEBUGGING-FF6D00?style=for-the-badge)
-➡️
 ![Step 2](https://img.shields.io/badge/2-OPEN_LOCAL_AI-7C4DFF?style=for-the-badge)
-➡️
 ![Step 3](https://img.shields.io/badge/3-COPY_%26_PASTE-00B8D9?style=for-the-badge)
-➡️
 ![Step 4](https://img.shields.io/badge/4-VERIFY_%26_FINISH-00C853?style=for-the-badge)
 
 </div>
 
-| 📺 On the TV | 💻 On the computer |
-|---|---|
-| Enable Developer Options and debugging. Accept Android's pairing/authorization message if shown. | Open Codex or another local agent, paste the prompt, and let it download ADB and perform the workflow. |
+- **📺 On the TV:** Enable Developer Options and debugging. Accept Android's pairing or authorization message if shown.
+- **💻 On the computer:** Open Codex or another local agent, paste the prompt, and let it download ADB and perform the workflow.
 
 ### 1. Enable debugging
 
 On the TV, open **Settings → Device Preferences/System → About**, press **Build** seven times, then enable **USB debugging** and **Wireless/Network debugging** in Developer Options.
 
-| USB debugging | Wireless debugging |
-|---|---|
-| ![VISION TV Developer Options with USB debugging enabled](docs/quickstart-developer-options.png) | ![VISION TV Wireless debugging enabled](docs/quickstart-wireless-debugging.png) |
+#### USB debugging
+
+<img src="docs/quickstart-developer-options.png" alt="VISION TV Developer Options with USB debugging enabled" width="100%">
+
+#### Wireless debugging
+
+<img src="docs/quickstart-wireless-debugging.png" alt="VISION TV Wireless debugging enabled" width="100%">
 
 > [!NOTE]
 > Look for the blue **Enable developer options** and **USB debugging** switches. Scroll farther down to confirm **Wireless debugging — Enabled**. Some brands call it **Network debugging** or open a separate page with pairing and connection ports.
@@ -168,7 +162,7 @@ After verification, disable USB, Network, and Wireless debugging—or disable De
 
 Your finished launcher should look like this:
 
-![Finished CleanYourTV launcher](docs/after-cleanyourtv.png)
+<img src="docs/after-cleanyourtv.png" alt="Finished CleanYourTV launcher" width="100%">
 
 <div align="center">
 
