@@ -311,6 +311,19 @@ public class MainActivity extends Activity {
         refreshNetwork();
         View f = getCurrentFocus();
         if (f == null && !tiles.isEmpty()) tiles.get(0).requestFocus();
+        HomeButton.onHomeResumed(this);
+        // Count the redirected Home as healthy only after the launcher remains alive briefly.
+        getWindow().getDecorView().postDelayed(homeOk, 1500);
+    }
+
+    private final Runnable homeOk = () -> HomeButton.onHomeOk(this);
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Leaving normally is also proof that the redirected launcher did not crash.
+        getWindow().getDecorView().removeCallbacks(homeOk);
+        HomeButton.onHomeOk(this);
     }
 
     // Back from a menu or a window on top (like the uninstall prompt): catch up on apps that changed.

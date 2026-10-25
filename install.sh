@@ -164,7 +164,8 @@ if [ -n "$google_tv" ] && [ "$GOOGLE_TV" != 1 ]; then
   if [ "$(current_home)" != "$ME" ]; then
     echo "This is a Google TV, so its own home screen stays on."
     echo "Turning it off has left some Google TVs (like Chromecast) stuck restarting."
-    echo "The new home screen is installed, but Home keeps opening Google TV's. The cleanup still works."
+    echo "For the safe Home fix, enable Settings > Accessibility > CleanYourTV Home button on the TV."
+    echo "It redirects Home without disabling Google TV. Turning the service off restores stock Home."
     echo "Only if you can reconnect to this TV over USB or port 5555, run again with GOOGLE_TV=1."
   fi
 fi

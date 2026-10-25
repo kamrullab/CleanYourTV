@@ -124,7 +124,7 @@ Safety rules:
 1. Never delete system packages. Use `pm disable-user --user 0` only. Save every newly disabled package before changing it and generate a tested `undo.sh`/`undo.ps1` that re-enables it.
 2. Never disable Google Play services (`com.google.android.gms`), Google Services Framework, Play Store, Settings, System UI, setup/provisioning, package installer, permission controller, keyboard/IME, Bluetooth, Wi-Fi/network stack, remote-control services, HDMI/input/tuner/Live TV frameworks, audio framework, WebView when required, or persistent/unknown vendor components. When unsure, leave it enabled.
 3. Keep screensaver enabled unless I explicitly confirm the panel is not OLED. Do not infer OLED status only from a marketing/model name.
-4. Do not disable `com.google.android.apps.tv.launcherx` automatically. First install and verify the custom launcher while launcherx remains enabled. If firmware keeps taking Home back, explain the boot-loop/factory-reset risk and require the exact confirmation `Disable launcherx; I accept the risk.` before disabling it.
+4. Do not disable `com.google.android.apps.tv.launcherx` automatically. First install and verify the custom launcher while launcherx remains enabled. If firmware keeps taking Home back, guide me to enable `CleanYourTV Home button` under TV Accessibility and verify that safe redirect. Only if it is unavailable or fails, explain the boot-loop/factory-reset risk and require the exact confirmation `Disable launcherx; I accept the risk.` before disabling launcherx.
 5. Keep a timestamped change log containing original values, commands, results, and exact undo commands. Preserve existing user files and Git history.
 6. Download executables only from official sources. Do not weaken firewalls or Android security settings.
 
@@ -142,7 +142,7 @@ Automatic workflow:
 11. Detect launchable user apps and configure the launcher row automatically. Prefer the apps the user actually installed. Keep HDMI inputs, Settings, network status, Play Store, and an Add App control.
 12. Personalize the header as `GitHub icon • KAMRUL HOSSAIN` unless I provide another name. Build from source with Java 17/Android SDK or use the repository's successful GitHub Actions artifact. Use stable signing credentials for updates; never commit a private signing key or secret.
 13. Install/update `com.kamrullab.cleanyourtv`, set it as the Android Home role, open it, and verify foreground focus. Take a real TV screenshot, inspect it visually, and update `docs/home-screen.png` plus the README preview.
-14. Press Home and verify routing. If the stock Google TV launcher wins, leave it enabled and report the firmware priority conflict. Only follow the launcherx high-risk path after the exact separate confirmation required above. If that confirmation is given, save launcherx in the undo list, disable it, verify custom Home immediately, wait 30 seconds, restart once, and automatically restore launcherx if Home/boot verification fails while ADB remains available.
+14. Press Home and verify routing. If the stock Google TV launcher wins, leave it enabled and report the firmware priority conflict. Ask me to open TV Settings > Accessibility and enable `CleanYourTV Home button`, then test Home and one restart. This service is the preferred safe fix because it observes only the stock Home activity and disables nothing. Only follow the launcherx high-risk path if the Accessibility redirect is unavailable or fails and I give the exact separate confirmation required above. If that confirmation is given, save launcherx in the undo list, disable it, verify custom Home immediately, wait 30 seconds, restart once, and automatically restore launcherx if Home/boot verification fails while ADB remains available.
 15. Wait at least 30 seconds after the last TV change, restart the TV once, reconnect ADB, wait for `sys.boot_completed=1`, and verify model, Home, HDMI/input framework, Settings, keyboard, Bluetooth, Wi-Fi, Play services, disabled list, animation/sleep/screensaver values, memory, storage, temperature, and recent crash/ANR logs.
 16. Benchmark the custom launcher with at least two cold starts and one hot start. Report launch times and PSS memory. Treat tiny gfxinfo samples as inconclusive rather than claiming 100% jank.
 17. Clear app caches only if they are materially large and only with Android-supported cache-trim commands; never clear app data, logins, media, or downloads. Do not delete the undo list. Report space before and after.
@@ -170,11 +170,26 @@ Your finished launcher should look like this:
 
 </div>
 
+## Keep CleanYourTV on the Home button
+
+Some Google TV firmware ignores Android's selected Home role and opens its own launcher again. CleanYourTV includes an opt-in safe redirect that keeps the stock launcher enabled.
+
+1. Install CleanYourTV version 1.5.4 or later.
+2. On the TV, open **Settings > Accessibility**.
+3. Select **CleanYourTV Home button** and turn it on.
+4. Press Home. Google TV may appear briefly, then CleanYourTV opens in front.
+5. Restart once and test Home again before turning debugging off.
+
+The service observes only the exact Google TV Home activity opening. It cannot read screen content or remote key presses. It stops redirecting after three failed launches, which protects against a broken update loop. Turn the service off at any time to restore the stock Home-button behavior.
+
+> [!IMPORTANT]
+> Prefer this Accessibility method before disabling `com.google.android.apps.tv.launcherx`. Keeping the stock launcher and setup apps enabled avoids the known restart and recovery-screen risk.
+
 ## Safety model
 
 CleanYourTV never automatically disables Google Play services, Play Store, Settings, System UI, setup/provisioning, keyboard, Bluetooth, Wi-Fi/network stack, HDMI/input/tuner frameworks, or unknown persistent vendor services.
 
-Google TV firmware can force `com.google.android.apps.tv.launcherx` even when Android assigns CleanYourTV the Home role. Disabling that protected launcher or its setup fallback can cause restart loops on some TVs. The automatic workflow requires a separate explicit risk confirmation before attempting that path.
+Google TV firmware can force `com.google.android.apps.tv.launcherx` even when Android assigns CleanYourTV the Home role. The safe Accessibility redirect is tried first and leaves that launcher enabled. Disabling the protected launcher or its setup fallback can cause restart loops on some TVs, so the automatic workflow requires a separate explicit risk confirmation before attempting that path.
 
 ## What gets created
 
