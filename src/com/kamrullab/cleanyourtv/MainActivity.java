@@ -178,7 +178,7 @@ public class MainActivity extends Activity {
         scroller.addView(root, new FrameLayout.LayoutParams(-1, -2));
 
         TextView brand = text(px(22), 0xFF7DE3FF, semibold);
-        brand.setText("CLEAN YOUR TV  •  VISION");
+        brand.setText("CLEAN YOUR TV  •  KAMRUL HOSSAIN");
         brand.setLetterSpacing(0.12f);
         GradientDrawable brandBg = new GradientDrawable();
         brandBg.setCornerRadius(px(18));
