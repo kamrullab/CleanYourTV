@@ -11,6 +11,12 @@
 [![Automatic](https://img.shields.io/badge/setup-AI_automatic-6C63FF)](AUTOMATION_PROMPT.md)
 [![Repository](https://img.shields.io/badge/GitHub-kamrullab%2FCleanYourTV-181717?logo=github)](https://github.com/kamrullab/CleanYourTV)
 
+<p>
+  <a href="#3-paste-this-in"><img alt="Copy the automatic prompt" src="https://img.shields.io/badge/COPY_AUTOMATIC_PROMPT-6C63FF?style=for-the-badge&logo=openai&logoColor=white"></a>
+  <a href="#before-and-after"><img alt="See before and after" src="https://img.shields.io/badge/SEE_BEFORE_%26_AFTER-00B8D9?style=for-the-badge&logo=googlephotos&logoColor=white"></a>
+  <a href="#manual-commands"><img alt="Undo and commands" src="https://img.shields.io/badge/UNDO_%26_COMMANDS-FF8A3D?style=for-the-badge&logo=gnubash&logoColor=white"></a>
+</p>
+
 </div>
 
 ## Before and after
@@ -23,15 +29,37 @@ The stock launcher contains recommendations, sponsored content, and firmware-con
 
 ## Why CleanYourTV
 
-- Lightweight launcher designed for low-RAM Android TVs.
-- No coding knowledge required: copy one prompt into a local AI agent.
-- Automatically downloads official Android Platform Tools when ADB is missing.
-- Finds, pings, pairs, and connects to the TV over the local network.
-- Reviews every package before changes and leaves unknown components enabled.
-- Turns off only selected nonessential apps; it does not delete system packages.
-- Saves every change to an undo list and supplies `undo.sh`.
-- Disables animations, configures sleep, preserves OLED-safe screensaver behavior, and measures performance.
-- Builds, installs, tests, screenshots, restarts, verifies, and documents the TV automatically.
+<table>
+<tr>
+<td width="33%" align="center"><h3>⚡ Fast</h3><p>Lightweight launcher, disabled animations, measured cold/hot starts, and settings tuned for low-RAM TVs.</p></td>
+<td width="33%" align="center"><h3>🧹 Clean</h3><p>Reversible cleanup of selected bloat, demos, telemetry, and removable promotional components.</p></td>
+<td width="33%" align="center"><h3>🛡️ Safe</h3><p>Never deletes system apps. Every change is logged, checked, and recoverable with an undo script.</p></td>
+</tr>
+<tr>
+<td width="33%" align="center"><h3>🤖 Automatic</h3><p>One detailed prompt handles ADB setup, connection, package review, build, install, and verification.</p></td>
+<td width="33%" align="center"><h3>🎨 Personal</h3><p>Custom GitHub header, favorite apps, HDMI shortcuts, settings, network state, date, and clock.</p></td>
+<td width="33%" align="center"><h3>↩️ Reversible</h3><p>Original values and disabled packages are saved before changes. Run <code>undo.sh</code> to restore them.</p></td>
+</tr>
+</table>
+
+## Automatic workflow
+
+<div align="center">
+
+![Connect](https://img.shields.io/badge/1-CONNECT-00B8D9?style=for-the-badge&logo=android&logoColor=white)
+➡️
+![Inspect](https://img.shields.io/badge/2-INSPECT-7C4DFF?style=for-the-badge&logo=searchengin&logoColor=white)
+➡️
+![Clean](https://img.shields.io/badge/3-CLEAN-FF6D00?style=for-the-badge&logo=sparkles&logoColor=white)
+➡️
+![Install](https://img.shields.io/badge/4-INSTALL-00C853?style=for-the-badge&logo=android&logoColor=white)
+➡️
+![Verify](https://img.shields.io/badge/5-VERIFY-2962FF?style=for-the-badge&logo=checkmarx&logoColor=white)
+
+</div>
+
+> [!TIP]
+> **No terminal knowledge is required.** Paste the prompt into a local AI agent and respond only when Android needs a physical approval, pairing code, or safety decision.
 
 ## No coding needed
 
