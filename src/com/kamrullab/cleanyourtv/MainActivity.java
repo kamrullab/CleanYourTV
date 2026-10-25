@@ -88,8 +88,8 @@ public class MainActivity extends Activity {
     private static final String TCL_SHOW_WINDOW = "com.tcl.settings.SHOW_WINDOW";
 
     // Layout is designed at 1920x1080 and scaled to the TV's real UI size by px().
-    private static final int MARGIN = 96, GAP = 36, RADIUS = 22;
-    private static final int ROW1_TOP = 604, ROW_STEP = 224;
+    private static final int MARGIN = 88, GAP = 28, RADIUS = 26;
+    private static final int ROW1_TOP = 578, ROW_STEP = 214;
     private static final int GRID_MIN_TOP = 400; // more rows push the grid up, but not into the clock
     private static final int ICON_TOP = 76, ICON_BUTTON = 72, ICON_SIZE = 40, ICON_GAP = 12; // level with the date
 
@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
         {0xFF170E19, 0xFF0C070D, 0xFF050306, 0x38C050B4, 0x2E6440D2},
         {0xFF0C150F, 0xFF070C09, 0xFF030604, 0x3050B478, 0x28289682},
         {0xFF151617, 0xFF0B0C0D, 0xFF050506, 0x1CFFFFFF, 0x16A0B4C8},
-        {0xFF0A1517, 0xFF060C0E, 0xFF030607, 0x3426B4C8, 0x2E2A64C0},
+        {0xFF071A2E, 0xFF081224, 0xFF040711, 0x6638D7FF, 0x504F46FF},
         {0xFF190D08, 0xFF0D0605, 0xFF060303, 0x40FF5A24, 0x32C8283C},
         {0xFF8C3A5E, 0xFF5E2348, 0xFF22101E, 0xA0FF8A4C, 0x80E0457A},
         {0xFF14588E, 0xFF15366E, 0xFF0A1632, 0x9030C8E0, 0x807A4CE0},
@@ -177,12 +177,23 @@ public class MainActivity extends Activity {
         root.setClipChildren(false);
         scroller.addView(root, new FrameLayout.LayoutParams(-1, -2));
 
+        TextView brand = text(px(22), 0xFF7DE3FF, semibold);
+        brand.setText("CLEAN YOUR TV  •  VISION");
+        brand.setLetterSpacing(0.12f);
+        GradientDrawable brandBg = new GradientDrawable();
+        brandBg.setCornerRadius(px(18));
+        brandBg.setColor(0x182CCBFF);
+        brandBg.setStroke(Math.max(1, px(1)), 0x5548D8FF);
+        brand.setBackground(brandBg);
+        brand.setPadding(px(20), px(9), px(20), px(9));
+        root.addView(brand, at(px(MARGIN), px(58), -2, -2));
+
         LinearLayout clock = new LinearLayout(this);
         clock.setOrientation(LinearLayout.VERTICAL);
         shownLocale = java.util.Locale.getDefault();
         String day = Strings.datePattern();
-        TextClock date = clock(day, day, px(30), 0xA8FFFFFF, regular);
-        TextClock time = clock("h:mm", "H:mm", px(176), Color.WHITE, semibold);
+        TextClock date = clock(day, day, px(27), 0xB8FFFFFF, regular);
+        TextClock time = clock("h:mm", "H:mm", px(132), Color.WHITE, semibold);
         time.setLetterSpacing(-0.028f);
         time.setFontFeatureSettings("tnum");
         time.setIncludeFontPadding(false);
@@ -190,9 +201,14 @@ public class MainActivity extends Activity {
         // or "0:00" to "9:59" (one digit less) cuts a long date off.
         clock.addView(date, new LinearLayout.LayoutParams(-2, -2));
         LinearLayout.LayoutParams tp = new LinearLayout.LayoutParams(-2, -2);
-        tp.topMargin = px(-20); // pull the big digits up under the date
+        tp.topMargin = px(-15); // pull the big digits up under the date
         clock.addView(time, tp);
-        root.addView(clock, at(px(MARGIN), px(92), -2, -2));
+        root.addView(clock, at(px(MARGIN), px(126), -2, -2));
+
+        TextView section = text(px(22), 0xB8FFFFFF, semibold);
+        section.setText("FAVORITES");
+        section.setLetterSpacing(0.14f);
+        root.addView(section, at(px(MARGIN), px(526), -2, -2));
 
         moveHint = text(px(24), 0xA8FFFFFF, regular);
         moveHint.setText(Strings.t("Use the arrows to move it, then press OK"));
@@ -332,7 +348,8 @@ public class MainActivity extends Activity {
     // The saved wallpaper, as an index into WALLPAPERS (Dusk if none is saved).
     private int wallpaper() {
         String saved = getSharedPreferences(PREFS, 0).getString("wallpaper", null);
-        return Math.max(0, Arrays.asList(WALLPAPER_NAMES).indexOf(saved));
+        int found = Arrays.asList(WALLPAPER_NAMES).indexOf(saved);
+        return found >= 0 ? found : 5; // Ocean is the CleanYourTV default.
     }
 
     private void showWallpaper(int i) {
@@ -475,8 +492,8 @@ public class MainActivity extends Activity {
             card.addView(iv, new FrameLayout.LayoutParams(-1, -1));
         } else {
             // Quiet "glass" tile: icon above label.
-            bg.setColor(0x13FFFFFF);
-            bg.setStroke(Math.max(1, px(2)), 0x17FFFFFF);
+            bg.setColor(0x18FFFFFF);
+            bg.setStroke(Math.max(1, px(2)), 0x2AFFFFFF);
             LinearLayout inner = new LinearLayout(this);
             inner.setOrientation(LinearLayout.VERTICAL);
             inner.setGravity(Gravity.CENTER);
@@ -510,11 +527,16 @@ public class MainActivity extends Activity {
         }
 
         final boolean glass = banner == null;
+        final GradientDrawable focusRing = new GradientDrawable();
+        focusRing.setCornerRadius(px(RADIUS));
+        focusRing.setColor(Color.TRANSPARENT);
+        focusRing.setStroke(px(4), 0xFF6BE7FF);
         card.setOnFocusChangeListener((v, has) -> {
             if (has) focusedKey = key;
-            if (glass) bg.setColor(has ? 0x38FFFFFF : 0x13FFFFFF);
-            v.animate().scaleX(has ? 1.1f : 1f).scaleY(has ? 1.1f : 1f).translationZ(has ? px(26) : 0)
-                    .setDuration(140).withLayer().start();
+            if (glass) bg.setColor(has ? 0x36FFFFFF : 0x18FFFFFF);
+            card.setForeground(has ? focusRing : null);
+            v.animate().scaleX(has ? 1.075f : 1f).scaleY(has ? 1.075f : 1f).translationZ(has ? px(28) : 0)
+                    .setDuration(125).withLayer().start();
             if (caption != null) caption.setVisibility(has ? View.VISIBLE : View.INVISIBLE);
         });
         final boolean editable = rowApps.contains(key);
