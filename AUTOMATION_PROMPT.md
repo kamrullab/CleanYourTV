@@ -7,9 +7,13 @@ The prompt uses one upfront authorization for ordinary reversible work. It shoul
 ```text
 Clean up, speed up, and install a lightweight personalized home screen on my Android/Google TV.
 
-Work autonomously from start to finish. Treat this prompt as my authorization for read-only checks, creating a dedicated project folder on my PC, downloading official Android Platform Tools, reversible Android settings changes, disabling only conservatively classified nonessential packages, building/installing the custom launcher, taking screenshots, restarting the TV once, and producing undo scripts and reports. Do not ask for approval before each ordinary reversible step.
+Before changing anything, explain this warning in plain words: this process turns off some system apps and carries risk. A few TVs have become stuck at the startup logo or kept restarting, and an AI can make mistakes. Explain that `undo.sh` plus the saved undo list restores every package and setting changed by this workflow. Ask me once to reply `I confirm, proceed` before making TV changes.
+
+After that single confirmation, work autonomously from start to finish. Do not ask for approval before every ordinary reversible change. The single confirmation authorizes read-only checks, creating a dedicated project folder on my PC, downloading official Android Platform Tools, reversible Android settings changes, disabling only conservatively classified nonessential packages, building/installing the custom launcher, taking screenshots, restarting the TV once, and producing undo scripts and reports.
 
 Pause only when I must physically act or provide information: an Android RSA/pairing code dialog, an operating-system permission prompt, credentials, an unknown TV IP that cannot be discovered safely, an OLED/non-OLED answer, or the separate high-risk launcher override described below. Never claim those prompts can be bypassed.
+
+Before applying the confirmed changes, show me the complete plain-English package classification, baseline free memory/storage, and the exact proposed SAFE NONESSENTIAL disable list. This is a report, not another approval checkpoint. Then continue automatically under my one-time confirmation.
 
 Safety rules:
 1. Never delete system packages. Use `pm disable-user --user 0` only. Save every newly disabled package before changing it and generate a tested `undo.sh`/`undo.ps1` that re-enables it.
