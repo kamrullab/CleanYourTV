@@ -74,13 +74,38 @@ The agent handles the PC folder, official ADB download, TV connection, package r
 
 ## Quick start
 
+<div align="center">
+
+![Step 1](https://img.shields.io/badge/1-ENABLE_DEBUGGING-FF6D00?style=for-the-badge)
+➡️
+![Step 2](https://img.shields.io/badge/2-OPEN_LOCAL_AI-7C4DFF?style=for-the-badge)
+➡️
+![Step 3](https://img.shields.io/badge/3-COPY_%26_PASTE-00B8D9?style=for-the-badge)
+➡️
+![Step 4](https://img.shields.io/badge/4-VERIFY_%26_FINISH-00C853?style=for-the-badge)
+
+</div>
+
+| 📺 On the TV | 💻 On the computer |
+|---|---|
+| Enable Developer Options and debugging. Accept Android's pairing/authorization message if shown. | Open Codex or another local agent, paste the prompt, and let it download ADB and perform the workflow. |
+
 ### 1. Enable debugging
 
 On the TV, open **Settings → Device Preferences/System → About**, press **Build** seven times, then enable **USB debugging** and **Wireless/Network debugging** in Developer Options.
 
+![VISION TV Developer Options with USB debugging enabled](docs/quickstart-developer-options.png)
+
+> [!NOTE]
+> Look for the blue **Enable developer options** and **USB debugging** switches. Menu names vary by brand. Newer Google TVs may show **Wireless debugging** instead of a network-debugging switch.
+
 ### 2. Open a local AI agent
 
 Open Codex, Claude Code, or another agent that can run commands on your computer. A web-only chatbot cannot access devices on your home network.
+
+<p align="center">
+  <a href="#3-paste-this-in"><img alt="Go to the prompt" src="https://img.shields.io/badge/READY%3F_GO_TO_THE_PROMPT-6C63FF?style=for-the-badge&logo=openai&logoColor=white"></a>
+</p>
 
 ### 3. Paste this in
 
@@ -138,6 +163,16 @@ My repository: https://github.com/kamrullab/CleanYourTV
 ### 4. Turn debugging off afterward
 
 After verification, disable USB, Network, and Wireless debugging—or disable Developer Options completely. Turn it on again only when running updates or `undo.sh`.
+
+Your finished launcher should look like this:
+
+![Finished CleanYourTV launcher](docs/after-cleanyourtv.png)
+
+<div align="center">
+
+![Done](https://img.shields.io/badge/SETUP_COMPLETE-CleanYourTV_is_ready-00C853?style=for-the-badge&logo=android&logoColor=white)
+
+</div>
 
 ## Safety model
 
