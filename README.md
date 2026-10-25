@@ -33,12 +33,12 @@ The stock launcher contains recommendations, sponsored content, and firmware-con
 
 ## Why CleanYourTV
 
-- **⚡ Fast** — Lightweight launcher, disabled animations, measured cold/hot starts, and settings tuned for low-RAM TVs.
-- **🧹 Clean** — Reversible cleanup of selected bloat, demos, telemetry, and removable promotional components.
-- **🛡️ Safe** — Never deletes system apps. Every change is logged, checked, and recoverable with an undo script.
-- **🤖 Automatic** — One detailed prompt handles ADB setup, connection, package review, build, install, and verification.
-- **🎨 Personal** — Custom GitHub header, favorite apps, HDMI shortcuts, settings, network state, date, and clock.
-- **↩️ Reversible** — Original values and disabled packages are saved before changes. Run `undo.sh` to restore them.
+- **⚡ Fast** - Lightweight launcher, disabled animations, measured cold/hot starts, and settings tuned for low-RAM TVs.
+- **🧹 Clean** - Reversible cleanup of selected bloat, demos, telemetry, and removable promotional components.
+- **🛡️ Safe** - Never deletes system apps. Every change is logged, checked, and recoverable with an undo script.
+- **🤖 Automatic** - One detailed prompt handles ADB setup, connection, package review, build, install, and verification.
+- **🎨 Personal** - Custom GitHub header, favorite apps, HDMI shortcuts, settings, network state, date, and clock.
+- **↩️ Reversible** - Original values and disabled packages are saved before changes. Run `undo.sh` to restore them.
 
 ## Automatic workflow
 
@@ -93,7 +93,7 @@ On the TV, open **Settings → Device Preferences/System → About**, press **Bu
 <img src="docs/quickstart-wireless-debugging.png" alt="VISION TV Wireless debugging enabled" width="100%">
 
 > [!NOTE]
-> Look for the blue **Enable developer options** and **USB debugging** switches. Scroll farther down to confirm **Wireless debugging — Enabled**. Some brands call it **Network debugging** or open a separate page with pairing and connection ports.
+> Look for the blue **Enable developer options** and **USB debugging** switches. Scroll farther down to confirm **Wireless debugging - Enabled**. Some brands call it **Network debugging** or open a separate page with pairing and connection ports.
 
 ### 2. Open a local AI agent
 
@@ -158,7 +158,7 @@ My repository: https://github.com/kamrullab/CleanYourTV
 
 ### 4. Turn debugging off afterward
 
-After verification, disable USB, Network, and Wireless debugging—or disable Developer Options completely. Turn it on again only when running updates or `undo.sh`.
+After verification, disable USB, Network, and Wireless debugging-or disable Developer Options completely. Turn it on again only when running updates or `undo.sh`.
 
 Your finished launcher should look like this:
 
@@ -178,10 +178,10 @@ Google TV firmware can force `com.google.android.apps.tv.launcherx` even when An
 
 ## What gets created
 
-- `PACKAGE_REVIEW.md` — every package with a plain-English classification.
-- `CLEANUP_LOG.md` — before/after memory, storage, settings, and verification results.
-- `undo.sh` — restores disabled packages, original settings, and the stock launcher.
-- `docs/home-screen.png` — screenshot from the verified TV.
+- `PACKAGE_REVIEW.md` - every package with a plain-English classification.
+- `CLEANUP_LOG.md` - before/after memory, storage, settings, and verification results.
+- `undo.sh` - restores disabled packages, original settings, and the stock launcher.
+- `docs/home-screen.png` - screenshot from the verified TV.
 
 ## Manual commands
 

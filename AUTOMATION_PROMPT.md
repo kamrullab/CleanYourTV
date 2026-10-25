@@ -1,4 +1,4 @@
-# CleanYourTV — automatic AI prompt
+# CleanYourTV - automatic AI prompt
 
 Copy the prompt below into a **local computer agent** such as Codex, Claude Code, or another agent that can run terminal commands and access devices on your home network. A web-only chatbot cannot connect to your TV.
 

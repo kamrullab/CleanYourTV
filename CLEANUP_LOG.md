@@ -18,15 +18,15 @@ Date: 2026-10-25
 - Installed the simple home screen with YouTube, Netflix, Prime Video, Spotify, and TikTok shortcuts.
 - Kept `com.google.android.apps.tv.launcherx` enabled because it is protected on Google TV.
 - Disabled, without deleting:
-  - `com.android.htmlviewer` — HTML file viewer
-  - `com.google.android.feedback` — Google feedback reporter
-  - `com.google.android.play.games` — Google Play Games
-  - `com.google.android.youtube.tvmusic` — YouTube Music
-  - `fusion.android.tv.demo` — factory/store demonstration app
-  - `tv.anoki.acr.anokiacroptin` — automatic content-recognition opt-in and viewing telemetry
-  - `com.expressluck.tvhelpmanual` — built-in help manual
-  - `com.android.tv.feedbackconsent` — TV feedback-consent component
-  - `com.mediatek.android.leanbacklauncher.partnercustomizer` — launcher partner promotions/customization
+  - `com.android.htmlviewer` - HTML file viewer
+  - `com.google.android.feedback` - Google feedback reporter
+  - `com.google.android.play.games` - Google Play Games
+  - `com.google.android.youtube.tvmusic` - YouTube Music
+  - `fusion.android.tv.demo` - factory/store demonstration app
+  - `tv.anoki.acr.anokiacroptin` - automatic content-recognition opt-in and viewing telemetry
+  - `com.expressluck.tvhelpmanual` - built-in help manual
+  - `com.android.tv.feedbackconsent` - TV feedback-consent component
+  - `com.mediatek.android.leanbacklauncher.partnercustomizer` - launcher partner promotions/customization
 - Set all three Android animation scales to `0`.
 - Set sleep timeout to 300,000 ms (5 minutes).
 - Kept the screensaver enabled.
