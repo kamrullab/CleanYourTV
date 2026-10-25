@@ -69,7 +69,7 @@ The laptop and TV must be on the same Wi-Fi.
 
 This detailed prompt tells a local AI agent to complete the workflow automatically, with one upfront authorization for ordinary reversible steps.
 
-`	ext
+```text
 Clean up, speed up, and install a lightweight personalized home screen on my Android/Google TV.
 
 Work autonomously from start to finish. Treat this prompt as my authorization for read-only checks, creating a dedicated project folder on my PC, downloading official Android Platform Tools, reversible Android settings changes, disabling only conservatively classified nonessential packages, building/installing the custom launcher, taking screenshots, restarting the TV once, and producing undo scripts and reports. Do not ask for approval before each ordinary reversible step.
@@ -110,7 +110,7 @@ My TV IP (optional): <TV_IP>
 My preferred apps (optional): <APP_NAMES_OR_AUTO>
 My display name: KAMRUL HOSSAIN
 My repository: https://github.com/kamrullab/CleanYourTV
-` 
+```
 
 The agent continues step by step without asking for repeated approval. It pauses only for unavoidable Android/OS security prompts, credentials, OLED confirmation, or the separate high-risk `launcherx` override.
 
