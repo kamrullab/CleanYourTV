@@ -174,7 +174,7 @@ Your finished launcher should look like this:
 
 Some Google TV firmware ignores Android's selected Home role and opens its own launcher again. CleanYourTV includes an opt-in safe redirect that keeps the stock launcher enabled.
 
-1. Install CleanYourTV version 1.5.4 or later.
+1. Install CleanYourTV version 1.5.5 or later.
 2. On the TV, open **Settings > Accessibility**.
 3. Select **CleanYourTV Home button** and turn it on.
 4. Press Home. Google TV may appear briefly, then CleanYourTV opens in front.

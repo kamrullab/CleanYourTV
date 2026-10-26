@@ -5,6 +5,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.SystemClock;
 import android.provider.Settings;
 import android.view.accessibility.AccessibilityEvent;
@@ -22,10 +24,16 @@ public class HomeButton extends AccessibilityService {
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-        if (event.getEventType() != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+        int type = event.getEventType();
+        if ((type != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+                && type != AccessibilityEvent.TYPE_WINDOWS_CHANGED
+                && type != AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED)
                 || !GOOGLE_TV_HOME.getPackageName().equals(String.valueOf(event.getPackageName()))
-                || !GOOGLE_TV_HOME.getClassName().equals(String.valueOf(event.getClassName()))
                 || !setupDone()) return;
+        // State events identify the exact activity. Content/window events cover firmware that
+        // resumes an existing launcher window without announcing a new activity state.
+        if (type == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+                && !GOOGLE_TV_HOME.getClassName().equals(String.valueOf(event.getClassName()))) return;
 
         SharedPreferences prefs = prefs(this);
         long now = SystemClock.elapsedRealtime();
@@ -44,13 +52,27 @@ public class HomeButton extends AccessibilityService {
         if (!prefs.edit().putLong("pending", now).putInt("failures", failures).commit()) return;
 
         lastOpened = now;
+        openHome();
+        // A physical remote can deliver another Home press while the first launch is pending.
+        // Retry only while the same token remains; MainActivity clears it as soon as it resumes.
+        retryIfPending(now, 800);
+        retryIfPending(now, 1800);
+    }
+
+    @Override
+    public void onInterrupt() {}
+
+    private void openHome() {
         try {
             startActivity(new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         } catch (Exception ignored) {}
     }
 
-    @Override
-    public void onInterrupt() {}
+    private void retryIfPending(long token, long delayMs) {
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            if (prefs(this).getLong("pending", -1) == token) openHome();
+        }, delayMs);
+    }
 
     // Never redirect during Android's initial device setup.
     private boolean setupDone() {
